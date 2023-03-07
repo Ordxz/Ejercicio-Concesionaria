@@ -9,6 +9,6 @@ class Automovil{
     //Sobreescritura del metodo ToString
     public override string ToString()
     {
-        return $"ID: {ID}, Marca; {Marca}, Kilometraje: {Kilometraje}, Precio: {Precio}";
+        return $"ID: {ID}, Marca; {Marca}, Modelo: {Modelo}, Kilometraje: {Kilometraje}, Precio: {Precio}";
     }
 }
