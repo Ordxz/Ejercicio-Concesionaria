@@ -14,24 +14,40 @@ class Concesionaria{
     }
     public void AgregarAuto(Automovil a)
     {
-        if(Actual<=Limite)
+        if(a!=null && Actual!=Limite)
         {
-        lista.Add(a);
-        Actual=Actual+1;
+        Automovil? autoEncontrado = lista.Find((b)=>b.ID==a.ID); //b es cada Auto en la Lista, y a es Auto nuevo
+        if(autoEncontrado==null){
+            lista.Add(a);
+            Actual=Actual+1;
+        }
+        
         }
         
     }
-    
-    public void MostrarAuto(Automovil a)
+    public void MostrarAuto(string ID)
     {
-        Console.WriteLine(a.ToString());
+        Automovil autoEncontrado = lista.Find((a)=>a.ID==ID);
+        if(autoEncontrado!=null){
+            Console.WriteLine(autoEncontrado.ToString());
+        }
     }
-    public void EliminarAuto(Automovil a)
+    public void EliminarAuto(String ID)
     {
-        if(Actual>0)
+        if(ID!="" && Actual!=0) // || lista.Contains(a)
         {
-            lista.Remove(a);
-            Actual=Actual-1;
+            Automovil? autoEncontrado = lista.Find((a)=>a.ID==ID); 
+            /*Find((a)=>a.ID==ID) 
+            function(Automovil a){
+                if(a.ID==ID)
+                    return a;
+            }
+            */
+            if(autoEncontrado!=null)
+            {
+                lista.Remove(autoEncontrado);
+                Actual=Actual-1;
+            }
         }
     }
     public void MostrarAutos()
@@ -44,6 +60,7 @@ class Concesionaria{
     public void VaciarConcesionaria()
     {
         lista.Clear();
+        Actual=0;
     }
     
 }
