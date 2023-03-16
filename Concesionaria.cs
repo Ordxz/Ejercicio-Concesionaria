@@ -1,12 +1,12 @@
 namespace Ejercicio_Concesionaria;
 
-class Concesionaria{
+ class Concesionaria{
 
     public List<Automovil> lista;
     public int Limite;
     public int Actual;
 
-    Concesionaria(int Limite)
+    public Concesionaria(int Limite)
     {
         lista = new List<Automovil>();
         this.Limite=Limite;

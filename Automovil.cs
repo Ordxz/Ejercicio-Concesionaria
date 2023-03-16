@@ -1,10 +1,10 @@
 namespace Ejercicio_Concesionaria;
 class Automovil{
-    public string ID;
-    public string Marca;
-    public string Modelo;
-    public int Kilometraje;
-    public double Precio;
+    public string? ID;
+    public string? Marca;
+    public string? Modelo;
+    public int? Kilometraje;
+    public double? Precio;
 
     public Automovil(string iD, string marca, string modelo, int kilometraje, double precio)
     {
